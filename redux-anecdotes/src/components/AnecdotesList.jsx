@@ -20,7 +20,7 @@ const AnecdotesList = () => {
   const filter = useSelector((state) => state.filter);
 
   const filteredAnecdotes = anecdotes.filter((anecdote) =>
-    anecdote.content.match(filter)
+    anecdote.content.toLowerCase().startsWith(filter)
   );
 
   return (
